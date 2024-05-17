@@ -30,7 +30,7 @@ public class SellCardController {
 
     public void sellOperation(){
         try{
-            UserStock userStock = UserStock.Generate(user.getId() , stock.getId(), Float.parseFloat(PriceField.getText()),quantity);
+            UserStock userStock = UserStock.generate(user.getId() , stock.getId(), Float.parseFloat(PriceField.getText()),quantity);
             UserStocks.getInstance().create(userStock.getId(),userStock);
         }catch (Exception e){
             AlterOperation.showErrorAlert(e.getMessage());
